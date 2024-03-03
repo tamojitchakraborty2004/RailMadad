@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"rel="stylesheet"/>
+    <link rel="stylesheet" href="index.css">
+    <title>RailMadad, A Grievance Redressal Mechanism</title>
+</head>
+<body>
+    <div class="main">
+    <div class="nav">
+        <div class="logo">
+            <a href="index.html"><img src=" https://swr.indianrailways.gov.in//uploads/images/1622118685701-Rail%20madad.png" alt=""><b>RailMadad</b> </a>
+        </div>
+        <div class="emergency">
+            <a href="tel:139" ><i class='bx bxs-phone-call'></i>139</a><p>for Security/Medical Assistance</p> 
+        </div>
+        <ul class="menu">
+            <ul class="menu">
+                <li> <button id="open-login-btn" style="cursor: pointer;">Login</button> </li>
+                <li><button id="open-signup-btn" style="cursor: pointer;">Signup</button> </li>
+                <li><select name="Language" id="language">
+                    <option value="English">English</option>
+                    <option value="Hindi ">हिन्दी</option> </li>
+                </select>
+            </ul>
+            
+        </div>
+       
+    
+    <div id="login-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="close-login-btn">&times;</span>
+            <h2>Complainant Login</h2>
+            <form id="login-form">
+                <label for="user" >Username:</label>
+                <input type="text" id="userid" name="userid" placeholder="Email or Phone" required>
+                <label for="pass">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <div class="cap">
+                <label for="captcha">Captcha:</label>
+                <div id="captcha"></div>
+                <img style="height:30px; width: 50px; ;" onclick="generateNewCaptcha()" src="https://railmadad.gov.in/madad/img_assets/refresh.png" alt="">
+                </div>
+                <input type="text" id="captchaInput" placeholder="Enter captcha">
+                <button type="submit" class="btn">Sign in</button>
+            </form>
+        </div>
+    </div>
+    <div id="signup-popup" class="popup2">
+        <div class="popup-content2">
+            <span class="close-btn" id="close-signup-btn">&times;</span>
+            <h2>Create Account</h2>
+            <form id="signup-form">
+                <!-- <label for="user" >Name:</label> -->
+                <input type="text" id="name" name="userid" placeholder="Name" required>
+                <!-- <label for="pass">Password:</label> -->
+                <input type="password" id="signpassword" name="password" placeholder="Password" required>
+                <!-- <label for="pass">Password:</label> -->
+                <input type="password" id="copassword" name="password" placeholder="Confirm Password" required>
+                <input type="text" placeholder="Mobile Number">
+                <h4>OR</h4>
+                <input type="email" placeholder="Email">
+                <button type="submit" class="btn">Sign Up</button>
+            </form>
+        </div>
+    </div>
+<nav class="navbar">
+    <ul>
+        <li class="navbar-logo" style="font-size: 1.3rem;">Grievance</li>
+        <li class="navbar-toggle" id="navbar-toggle"><i class="fas fa-bars"></i></li>
+        <li class="navbar-links"><a href="train.html">Train</a></li> 
+        <li class="navbar-links"><a href="station.html">Station</a></li>
+        <li class="navbar-links"><a href="rail.html">Rail Anubhav</a></li>
+        <li class="navbar-links"><a href="enquiry.html">Enquiry</a></li>
+        <li class="navbar-links"><a href="track.html">Track your Concern</a></li>
+        <li class="navbar-links"><a href="suggestion.html">Suggestion</a></li>
+    </ul>
+</nav>
+<div class="boxes">
+<h1>Be with us for Live Tracking</h1>
+<br>
+<br>
+<div class="box">
+   <Label>Reference No.</Label><br>
+    <input type="text" style="width:80% ;" >   
+</div>
+<br><br>
+<div class="buton">
+    <button class="train">
+        <p class="submit">Submit</p>
+        </button >
+</div>
+</div>
+<div class="footer">
+    <div class="footernav">
+        <ul>
+        <li><a href="">Home |</a></li>
+        <li><a href="">FAQ's |</a></li>
+        <li><a href="">RAILMADAD ADMIN LOGIN |</a></li>
+        <li><a href="">MIS Report Login</a></li>
+    </ul>
+    </div>
+    <div class="footerbottom">
+        <p>Copyright&copy;2019 RAILMADAD. All Rights Reserved </p>
+    </div>
+</div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"rel="stylesheet"/>
+    <link rel="stylesheet" href="index.css">
+    <title>RailMadad, A Grievance Redressal Mechanism</title>
+</head>
+<body>
+    <div class="main">
+    <div class="nav">
+        <div class="logo">
+            <a href="index.html"><img src=" https://swr.indianrailways.gov.in//uploads/images/1622118685701-Rail%20madad.png" alt=""><b>RailMadad</b> </a>
+        </div>
+        <div class="emergency">
+            <a href="tel:139" ><i class='bx bxs-phone-call'></i>139</a><p>for Security/Medical Assistance</p> 
+        </div>
+        <ul class="menu">
+            <li> <button id="open-login-btn" style="cursor: pointer;">Login</button> </li>
+            <li><button id="open-signup-btn" style="cursor: pointer;">Signup</button> </li>
+            <li><select name="Language" id="language">
+                <option value="English">English</option>
+                <option value="Hindi ">हिन्दी</option> </li>
+            </select>
+        </ul>
+        
+    </div>
+   
+
+<div id="login-popup" class="popup">
+    <div class="popup-content">
+        <span class="close-btn" id="close-login-btn">&times;</span>
+        <h2>Complainant Login</h2>
+        <form id="login-form">
+            <label for="user" >Username:</label>
+            <input type="text" id="userid" name="userid" placeholder="Email or Phone" required>
+            <label for="pass">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <div class="cap">
+            <label for="captcha">Captcha:</label>
+            <div id="captcha"></div>
+            <img style="height:30px; width: 50px; ;" onclick="generateNewCaptcha()" src="https://railmadad.gov.in/madad/img_assets/refresh.png" alt="">
+            </div>
+            <input type="text" id="captchaInput" placeholder="Enter captcha">
+            <button type="submit" class="btn">Sign in</button>
+        </form>
+    </div>
+</div>
+<div id="signup-popup" class="popup2">
+    <div class="popup-content2">
+        <span class="close-btn" id="close-signup-btn">&times;</span>
+        <h2>Create Account</h2>
+        <form id="signup-form">
+            <!-- <label for="user" >Name:</label> -->
+            <input type="text" id="name" name="userid" placeholder="Name" required>
+            <!-- <label for="pass">Password:</label> -->
+            <input type="password" id="signpassword" name="password" placeholder="Password" required>
+            <!-- <label for="pass">Password:</label> -->
+            <input type="password" id="copassword" name="password" placeholder="Confirm Password" required>
+            <input type="text" placeholder="Mobile Number">
+            <h4>OR</h4>
+            <input type="email" placeholder="Email">
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+    </div>
+</div>
+<nav class="navbar">
+    <ul>
+        <li class="navbar-logo" style="font-size: 1.3rem;">Grievance</li>
+        <li class="navbar-toggle" id="navbar-toggle"><i class="fas fa-bars"></i></li>
+        <li class="navbar-links"><a href="train.html" class="nav-link">Train</a></li> 
+        <li class="navbar-links"><a href="station.html" class="nav-link">Station</a></li>
+        <li class="navbar-links"><a href="rail.html" class="nav-link">Rail Anubhav</a></li>
+        <li class="navbar-links"><a href="enquiry.html" class="nav-link">Enquiry</a></li>
+        <li class="navbar-links"><a href="track.html" class="nav-link">Track your Concern</a></li>
+        <li class="navbar-links"><a href="suggestion.html" class="nav-link">Suggestion</a></li>
+    </ul>
+</nav>
+
+<div class="first">
+<div class="home">
+    <h1>Rail Mobile Application for</h1>
+    <h1>Desired Assistance During travel</h1> 
+    <p>Rail Madad Portal is to enable railway passengers to lodge a complaint or give suggestion through on line, app., or SMS and facility to track live status of complaints and provide feedback based on their satisfaction with the resolution.</p>  
+</div>
+<img src="https://img.freepik.com/free-vector/organic-flat-customer-support-illustration_23-2148899174.jpg?size=626&ext=jpg&ga=GA1.1.632798143.1705622400&semt=ais" alt="">
+</div>
+
+<div class="post">
+<div class="about">
+    <h3>About us</h3>
+    <h2>Rail MADAD Grievance Redressal System</h2>
+</div>
+<div class="card-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="card-img">
+           <img class="heading" src="data:image/png;base64,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" alt="">
+        </div>
+            <p>
+            MADAD Grievance Redressal System is an online web-enabled system developed to redress complaints or suggestions.
+        </p></div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+            <div class="card-img"><img class="heading" src="data:image/png;base64,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" alt="">
+            </div><p> MADAD Grievance Redressal System primarily aims to enable submission of grievances by the aggrieved party from anywhere and anytime (24x7).
+        </p></div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-img"><img class="heading" src="data:image/png;base64,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" alt="">
+                    </div>
+                   <p>The aggrieved party can submit their grievances through various modes such as post/letter, call center and grievance portal.
+        </p>    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-img"><img class="heading" src="data:image/png;base64,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" alt="">
+                        </div><p>
+            Tracking grievances is facilitated on this portal through the system generated ABDM unique grievance tracking number.
+        </p></div>
+                    </div>
+
+</div>
+</div>
+ <div class="left">
+       <ul class="links">
+           <li><a href="https://www.irctc.co.in/nget/train-search"target="_blank" > <img src="https://railmadad.gov.in/madad/final/images/booking-icon-1.png" alt="">
+        <figcaption>Ticket <br> Booking</figcaption></a></li>
+           <li><a href="https://enquiry.indianrail.gov.in/mntes/" target="_blank"> <img src="https://railmadad.gov.in/madad/final/images/booking-icon-2.png" alt="">
+        <figcaption>Train <br> Enquiry</figcaption></a></li>
+           <li><a href="http://www.indianrail.gov.in/" target="_blank"> <img src="https://railmadad.gov.in/madad/final/images/booking-icon-3.png" alt="">
+        <figcaption>Reservation <br> Enquiry</figcaption></a></li>
+           <li><a href="https://www.rr.irctc.co.in/#/home" target="_blank"> <img src="https://railmadad.gov.in/madad/final/images/booking-icon-4.png" alt="">
+        <figcaption>Retiring  <br>Room <br> Booking</figcaption></a></li>
+           <li><a href="http://www.indianrailways.gov.in/" target="_blank"> <img src="https://railmadad.gov.in/madad/final/images/booking-icon-5.png" alt="">
+        <figcaption>Indian <br> Railways</figcaption></a></li>
+           <li><a href="https://play.google.com/store/apps/details?id=com.cris.utsmobile&hl=en_IN" target="_blank"> <img src="https://railmadad.gov.in/madad/final/images/booking-icon-6.png" alt="">
+        <figcaption>UTS <br> Ticketing</figcaption></a></li>
+        <li><a href="https://www.fois.indianrail.gov.in/RailSAHAY/index.jsp" target="_blank"> <img src="https://railmadad.gov.in/madad/final/images/booking-icon-7.png" alt="">
+            <figcaption>Freight<br>Business</figcaption></a></li>
+            <li><a href="https://parcel.indianrail.gov.in/" target="_blank" > <img src="https://railmadad.gov.in/madad/final/images/booking-icon-2.png" alt="">
+                <figcaption>Railway <br> Parcel <br> Website</figcaption></a></li>
+
+       </ul>
+    </div>
+
+    <div class="footer">
+        <div class="footernav">
+            <ul>
+            <li><a href="">Home |</a></li>
+            <li><a href="">FAQ's |</a></li>
+            <li><a href="">RAILMADAD ADMIN LOGIN |</a></li>
+            <li><a href="">MIS Report Login</a></li>
+        </ul>
+        </div>
+        <div class="footerbottom">
+            <p>Copyright&copy;2024 RAILMADAD. All Rights Reserved </p>
+        </div>
+    </div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
